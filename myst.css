@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+
+body {
+    width : auto;
+    height: auto;
+    background: linear-gradient(#6a0000 30%, #FFFFFF);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+  min-height: 3000px;
+  font-family: 'Montserrat', sans-serif;
+    animation: fadein 3s;
+  -moz-animation: fadein 3s; /* Firefox */
+  -webkit-animation: fadein 3s; /* Safari and Chrome */
+  -o-animation: fadein 3s; /* Opera */
+}
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+p {
+    color : white;
+    text-align: center;
+    display: inline-block;
+    padding : 3em;
+    font-family: source-han-serif-korean, serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 10pt; 
+}
+.mainbt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+.bt {
+    display: inline-block;
+    height: 100px;
+    width: 230px;
+    font-size: 20pt;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: white;
+    border: none;
+    background: radial-gradient(rgba(60,0,0,1) 0%, rgba(255,255,255,0) 70%);
+    margin: 10px;
+    position: absolute;
+}
+.outer-container {
+  max-width: 600px;
+  margin: auto;
+  width: 90%;
+  padding: 200px 0px;
+  position: relative;
+}
+
+.image-container {
+  padding-bottom: 100%;
+  background: black;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+  background-size: cover;
+  background-position: center;
+}
+
+.section-title {
+  margin: 0;    
+  font-size: 30px;
+  width: 100%;
+  text-align: right;
+  position: sticky;
+  top: 50%;
+  left: -30%;
+  transform: translateX(200%) translateY(50%);
+  z-index: 1;
+  white-space: nowrap;
+}
+.section-title span {
+  position: relative;
+  display: block;
+}

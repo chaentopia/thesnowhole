@@ -1,0 +1,12 @@
+<style>
+
+/*
+.bg {
+    background-color : linear-gradient (#6a0000, #FFFFFF);
+};
+*/
+body {
+    background: linear-gradient(to bottom, red, blue);
+}
+
+</style>

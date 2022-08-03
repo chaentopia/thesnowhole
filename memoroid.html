@@ -1,0 +1,231 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    
+    <!--타이틀-->
+    <title>Memoroid Camera</title>
+    
+    <!--css-->
+    <link rel="stylesheet" href="style.css">
+    
+    <!--웹폰트 불러오기-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;600&display=swap" rel="stylesheet">
+
+    <!--제이쿼리 라이브러리-->
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    
+    <!--캡쳐 라이브러리-->
+    <script src="html2canvas.js"></script>
+</head>
+    
+    
+<body>
+<div class = 'bd'>
+<div class = 'mydiv'>
+<!--    제목-->
+    <p>Memoroid Camera</p>
+</div>
+
+    
+    
+<div style="text-align: center">
+<!--서터 버튼 누르기 안내 멘트-->
+    <p style = "font-size: 20px;">Press the Shutter Button!</p> 
+<div id = 'screenshot'>
+<!--웹캠 화면-->
+        <video id="videoElement" 
+       autoplay="autoplay"></video>
+    
+    <div class = "text_here"><!--텍스트 입력 칸-->
+        <input type= "text" id="input" placeholder="Enter your text here!">
+    </div>
+</div>
+</div>
+    
+<div style="text-align: center;">
+<!--셔터 및 재촬영 버튼-->
+    <button id = "shutter" onclick = "shutter()">shutter!</button>
+    <button id ="save" onclick = "save()">save!</button>
+</div>
+        
+    
+<div style = "text-align: center;">
+<!--    프레임컬러 선택 안내 멘트-->
+    <p1>Choose the frame color!</p1>
+    <br>
+<!--    프레임 컬러 선택 색상 버튼-->
+    <button id = "bt" onclick = "change1();" style = "background-color:#FFE6E6"></button>
+    <button id = "bt"  onclick = "change2();" style = "background-color:#DAEAF1"></button>
+    <button id = "bt"  onclick = "change3();" style = "background-color:#FAF4B7"></button>
+    <button id = "bt"  onclick = "change4();" style = "background-color:#BDF2D5"></button>
+    <button id = "bt"  onclick = "change5();" style = "background-color:#CA82FF"></button>
+    <button id = "bt"  onclick = "change6();" style = "background-color:#646FD4"></button>
+    <button id = "bt"  onclick = "change7();" style = "background-color:#F55353"></button>
+    <button id = "bt"  onclick = "change8();" style = "background-color:#FF85B3"></button>
+    <button id = "bt"  onclick = "change9();" style = "background-color:#A6A6A6"></button>
+    <button id = "bt"  onclick = "change10();" style = "background-color:#000000"></button>
+    <button id = "bt"  onclick = "change11();" style = "background-color:#FFFFFF"></button>
+</div>
+    
+<br> <br>  
+</div>
+    
+<div class = 'bd'>
+<div style = "text-align: center; padding: 20px;">
+<!--    찍은 사진 안내 멘트-->
+<p1>Here is your picture!</p1>
+<br> <br>
+<!--    찍은 사진들을 볼 수 있음-->
+<div id='img'></div>
+</div>
+</div>
+    
+    
+<script>
+
+//웹캠 실행
+var video = document.querySelector("#videoElement"); //엘리먼트 반환
+if (navigator.mediaDevices.getUserMedia) {
+  navigator.mediaDevices.getUserMedia({ video: true })
+    //getUserMedia를 사용해서 카메라를 불러올 수 있고, 처음 호출되면 사용자에게 미디어 장치 사용 권한 허용 여부를 물어본다.
+    .then(function (stream) {
+      video.srcObject = stream;
+      //성공 시, 스트림을 사용한다
+    })
+    .catch(function (err0r) {
+      console.log("Something went wrong!");
+      //실패 시, 콘솔에 메세지를 입력하며 오류 처리한다
+    });
+} 
+
+    //색상 변경 함수
+    function change1(){
+        var ch1  = document.getElementById("screenshot"); 
+        ch1.style.backgroundColor="#FFE6E6";
+        //웹캠 테두리선 스타일 변경
+        
+        var ch2 = document.getElementById("input");
+        ch2.style.color = "black";
+        //입력 칸 텍스트 색상 변경
+    }    
+    function change2(){
+        var ch1  = document.getElementById("screenshot"); 
+        ch1.style.backgroundColor="#DAEAF1";
+        
+        var ch2 = document.getElementById("input");
+        ch2.style.color = "black";
+    }    
+    function change3(){
+        var ch1  = document.getElementById("screenshot"); 
+        ch1.style.backgroundColor="#FAF4B7";
+        
+        var ch2 = document.getElementById("input");
+        ch2.style.color = "black";
+    }    
+    function change4(){
+        var ch1  = document.getElementById("screenshot"); 
+        ch1.style.backgroundColor="#BDF2D5";
+        
+        var ch2 = document.getElementById("input");
+        ch2.style.color = "black";
+    }  
+    function change5(){
+        var ch1  = document.getElementById("screenshot"); 
+        ch1.style.backgroundColor="#CA82FF";
+        
+        var ch2 = document.getElementById("input");
+        ch2.style.color = "white";
+    }   
+    function change6(){
+        var ch1  = document.getElementById("screenshot"); 
+        ch1.style.backgroundColor="#646FD4";
+        
+        var ch2 = document.getElementById("input");
+        ch2.style.color = "white";
+    } 
+    function change7(){
+        var ch1  = document.getElementById("screenshot"); 
+        ch1.style.backgroundColor="#F55353";
+        
+        var ch2 = document.getElementById("input");
+        ch2.style.color = "white";
+    } 
+    function change8(){
+        var ch1  = document.getElementById("screenshot"); 
+        ch1.style.backgroundColor="#FF85B3";
+        
+        var ch2 = document.getElementById("input");
+        ch2.style.color = "white";
+    } 
+    function change9(){
+        var ch1  = document.getElementById("screenshot"); 
+        ch1.style.backgroundColor="#A6A6A6";
+        
+        var ch2 = document.getElementById("input");
+        ch2.style.color = "black";
+    } 
+    function change10(){
+        var ch1  = document.getElementById("screenshot"); 
+        ch1.style.backgroundColor="#000000";
+        
+        var ch2 = document.getElementById("input");
+        ch2.style.color = "white";
+    } 
+    function change11(){
+        var ch1  = document.getElementById("screenshot"); 
+        ch1.style.backgroundColor="#FFFFFF";
+        
+        var ch2 = document.getElementById("input");
+        ch2.style.color = "black";
+    }
+    
+    //셔터 버튼 함수
+    function shutter(){
+        var sht = document.getElementById("shutter"); 
+        var ch1  = document.getElementById("videoElement");
+        
+        if (sht.innerText === 'shutter!'){
+            sht.innerText = 'retry?';
+            ch1.pause();
+            //shutter! 버튼일 때, 셔터 버튼 누르면 글자는 retry?로 바뀌고 웹캠 화면이 일시 정지됨
+        } else {
+            sht.innerText = 'shutter!';
+            ch1.play();
+            //retry? 버튼일 때, 재촬영 버튼 누르면 글자는 shutter!로 바뀌고 웹캠 화면이 다시 재생됨
+            }
+    };
+
+    
+    //저장 버튼 함수
+    $(function(){
+        $("#save").click(function(){
+            html2canvas($('#screenshot').get(0)).then (function(canvas){
+                //저장 버튼 함수를 클릭하면 screenshot 부분이 캡쳐되고, img 부분에 캡쳐된 사진이 나옴
+                document.getElementById('img').appendChild(canvas);
+                var data = canvas.toDataURL();
+                console.log(data);
+                //캡쳐한 사진을 memoroid.jpg 파일로 저장함
+                saveAs(canvas.toDataURL('image/jpg'),"memoroid.jpg");
+            });
+        });
+        //캡쳐한 사진 저장
+        function saveAs(uri, filename){
+            var link = document.createElement('a');
+            if (typeof link.download === 'string'){
+                link.href = uri;
+                link.download = filename;
+                document.body.appendChild(link);
+                link.click();
+                document.body.appendChild(link);
+            } else {
+                window.open(uri);
+            };
+        };
+    });
+
+    
+</script>
+</body>

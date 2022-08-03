@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>설혈 the snow hole</title>
+    <link rel="stylesheet" type= "text/css" href="myst.css">
+    <link href = "%EC%98%A5%EC%B6%98%EB%8B%B9.png" rel = "shortcut icon" type = "image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;600&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+</head>
+    
+<body>
+	<h2 class="section-title">
+	<span class="paralax-title"> 소생하소서. 고귀하신 우리의 신이시여 묵시의 의와 같이 신(新) 봄과 백국(白國)이 닿기를 간구하니. 소생하소서. 비참한 우리를 악한 것과 사의 세계에서 분리하여 병막 속에서 오직 신만의 정애 하에 천대가 이어지리라. 소생하소서. 우리의 모든 육신은 신만의 것이며 필연 신만을 사랑할 수 있으리라. 소생하소서. 영검의 신께서 세상에 다시 이르실 때 신 봄이 내도할 것이니 그 광음이 오기까지 적(赤)으로 씻기어내리라. 소생하소서.
+	</span>
+	</h2>
+    <div class = 'mainbt'>
+    <button class = 'bt' onclick = "location.href='main.html'"> 소생하소서 </button>
+    </div>
+</body>
+    
+	<script>
+	let didScroll = false;
+	let paralaxTitles = document.querySelectorAll('.paralax-title');
+
+	const scrollInProgress = () => {
+		didScroll = true
+	}
+
+	const raf = () => {
+		if(didScroll) {
+			paralaxTitles.forEach((element, index) => {
+				element.style.transform = "translateX("+ - window.scrollY / 3 + "%)"
+			})
+			didScroll = false;
+		}
+		requestAnimationFrame(raf);
+	}
+	requestAnimationFrame(raf);
+	window.addEventListener('scroll', scrollInProgress)
+	</script>
+    <script>
+    
+    $(document).ready(function(){
+        var navWidth = $(".paralax-title").width();
+        
+        $(".bt").hide();
+        $(window).scroll(function(){
+            var rollIt = $(this).scrollTop() >= navWidth*21/19;
+            
+            if (rollIt){
+                $(".bt").show().css({"position":"fixed"});
+            }
+            else {
+                $(".bt").hide();
+            }
+        });
+    });
+    
+    
+    </script>
+    
+    
+    
+    
+    
+</html>

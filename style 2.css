@@ -1,0 +1,130 @@
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+
+.mydiv {
+    height : 200px;
+    text-align: center;
+}
+
+.bd{
+     border: 3px limegreen solid;
+    border-radius: 30px;
+    margin: 20px;
+}
+
+body {
+    background-color: black;
+}
+
+p {
+    text-align : center;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-size: 25pt;
+    font-weight: 600;
+    margin : 15px;
+    color: limegreen;
+}
+p1 {
+    text-align : center;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-size: 15pt;
+    font-weight: 600;
+    color: limegreen;
+}
+
+#screenshot {
+    text-align: center;
+    display:inline-block;
+    background-color: white;
+    padding: 35px;
+    border-radius: 0px;
+/*    border: 5px pink dashed;*/
+    width: auto;
+    
+}
+
+#videoElement {
+    width: 500px;
+    height: 375px;
+    display: inline-block;
+    text-align: center;
+    border: 40px black solid;
+    border-bottom-width: 100px;
+    margin: 0px;
+    
+}
+ 
+
+#bt {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    border-radius:50%;
+    border: 0px;
+    margin: 10px;
+    box-shadow: 1px 1px 3px gray;
+}
+
+#bt:hover{
+    border: 2px lime solid;
+}
+
+#shutter, #save {
+    display: inline-block;
+    height: 30px;
+    width: 100px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 200;
+    background-color: whitesmoke;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    color: black;
+    border: none;
+    border-radius: 60px;
+    box-shadow: 1px 1px 2px gray;
+    margin: 10px;
+}
+
+#shutter:hover{
+    background-color: limegreen;
+    color: white;
+}
+
+#shutter:active{
+    background-color: lime;
+    color: white;
+}
+
+#save:hover{
+    background-color: limegreen;
+    color: white;
+}
+
+#save:active{
+    background-color: lime;
+    color: white;
+}
+ 
+
+#input {
+    text-align: center;
+    display: inline-flex;
+    font-size:20px;
+    border: none;
+    background: transparent;
+    color: black;
+    width: 600px;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    padding: 5px;
+    margin-top: 30px;
+
+}
+
+#img {
+    text-align: center;
+}
+
+
+
+</style>
