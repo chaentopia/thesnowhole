@@ -9,10 +9,15 @@ body {
     margin: 0;
   min-height: 3000px;
   font-family: 'Montserrat', sans-serif;
+    -ms-overflow-style : none;
     animation: fadein 3s;
   -moz-animation: fadein 3s; /* Firefox */
   -webkit-animation: fadein 3s; /* Safari and Chrome */
   -o-animation: fadein 3s; /* Opera */
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 @keyframes fadein {
     from {
@@ -113,3 +118,4 @@ p {
   position: relative;
   display: block;
 }
+
